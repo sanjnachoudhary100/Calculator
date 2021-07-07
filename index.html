@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+    <style>
+        *
+        {
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background-image: url(images/wp5462430.jpg);
+            background-size: 100% 100%;
+        }
+        form{
+            width: 400px;
+            height:520px;
+            box-shadow: 0 0 10px 1px grey;
+        }
+        .center-calculator
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #app_name
+        {
+            width: inherit;
+            font-size: 0.8 rem;
+            padding:2px 0 2px 10px;
+            background-color: #303030;
+            color: white;
+            border: none;
+            outline:none;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #display_final_output
+        {
+            width: inherit;
+            height: 100px;
+            background-color: #303030;
+            font-size: 2 rem;
+            color: white;
+            text-align: right;
+            outline: none;
+            border:none;
+        }
+        .layer-1
+        {
+            width: inherit;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+        }
+        input{flex:1;}
+
+        .layer-2
+        {
+            width: inherit;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        input{
+             font-size:1.4 rem;
+             color: white;
+             border:1px solid #504f4f;
+             outline: none;
+        }
+        .main_numbers
+        {
+            background-color: #101011;
+            color:white;
+        }
+
+        .operator
+        {
+            background-color: #303030;
+        }
+        #clear-btn
+        {
+           font-size:1 rem;
+        }
+        input:hover{
+            background-color: #474747;
+            border:1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-calculator">
+        <form name="calcy">
+            <input type="text" value="Calculator" id="app_name">
+            <input type="text" name="final_output" id="display_final_output">
+
+            <div class="layer-2">
+                <input type="button" class="operator" value="C" id="clear-btn" onclick="calcy.final_output.value=''">
+                <input type="button" class="operator"   value="=" onclick="calcy.final_output.value=eval(calcy.final_output.value)">
+
+            </div>
+
+            <div class="layer-1">
+                <input type="button" class="main_numbers" value="7" onclick="calcy.final_output.value+='7' ">
+                <input type="button" class="main_numbers" value="8" onclick="calcy.final_output.value+='8' ">
+                <input type="button" class="main_numbers" value="9" onclick="calcy.final_output.value+='9' ">
+                <input type="button" class="operator" value="*" onclick="calcy.final_output.value+='*' ">
+            </div>
+
+            <div class="layer-1">
+                <input type="button" class="main_numbers" value="4" onclick="calcy.final_output.value+='4' ">
+                <input type="button" class="main_numbers" value="5" onclick="calcy.final_output.value+='5' ">
+                <input type="button" class="main_numbers" value="6" onclick="calcy.final_output.value+='6' ">
+                <input type="button" class="operator" value="-" onclick="calcy.final_output.value+='-' ">
+            </div>
+
+            
+            <div class="layer-1">
+                <input type="button" class="main_numbers" value="1" onclick="calcy.final_output.value+='1' ">
+                <input type="button" class="main_numbers" value="2" onclick="calcy.final_output.value+='2' ">
+                <input type="button" class="main_numbers" value="3" onclick="calcy.final_output.value+='3' ">
+                <input type="button" class="operator" value="+" onclick="calcy.final_output.value+='+' ">
+            </div>
+
+            <div class="layer-1">
+                <input type="button" class="operator" value="." onclick="calcy.final_output.value+='.' ">
+                <input type="button" class="main_numbers" value="0" onclick="calcy.final_output.value+='0' ">
+                <input type="button" class="operator" value="%" onclick="calcy.final_output.value+='%' ">
+                <input type="button" class="operator" value="/" onclick="calcy.final_output.value+='/' ">
+            </div>
+
+            
+        </form>
+
+    </div>
+    
+</body>
+</html>
